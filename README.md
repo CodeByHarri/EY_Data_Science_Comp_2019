@@ -1,13 +1,13 @@
+
+#  EY Data Science Challenge 2019
+---
+
 GOTTA ADD IN AREAS OF IMPROVEMENT, 
 get rid of code and add pictures
 show screenshots of the data and etc
 
 ---
-title: "Optimizing Data for XGBOOST"
 Author: Harri Somakanthan
-output: html_notebook
----
-
 This is both a personal guide & my approach to the EY Data Science Challenge 2019:
 
 * Pre-processing data
@@ -21,8 +21,9 @@ This is both a personal guide & my approach to the EY Data Science Challenge 201
 
 ***
 
-Context: 
-Students will have access to a data file data_train.csv that contains the anonymized geolocation data of multiple mobile devices in the City of Atlanta (US) for 11 working days in October 2018. The devices’ ID resets every 24 hours; therefore, you will not be able to trace the same device across different days. Therefore, every device ID represents a 1-day journey. Each journey is formed by several trajectories. A trajectory is defined as the route of a moving person in a straight line with an entry and an exit point.
+Context: In the following data science competition I had access to a data file data_train.csv that contains the anonymized geolocation data of multiple mobile devices in the City of Atlanta (US) for 11 working days in October 2018. Where every device ID represents a 1-day journey. Each journey is formed by several trajectories. A trajectory is defined as the route of a moving person in a straight line with an entry and an exit point. 
+
+The aim was to determine which trajectories fall into the city center and label these as either 1 or 0. 
 
 
 # **PRE-PROCESSING**
@@ -41,6 +42,7 @@ Students will have access to a data file data_train.csv that contains the anonym
 * Possibly by turning the data into a widedata set by hash! 
 
 # **OUTLIERS**
+The following are methods i attempted to use to determine outliers. 
 
 ### Univariate Outlier Detection Methods:
 
@@ -63,11 +65,9 @@ Using trial and error i applied all the above to various aspects of the data to 
 
 **Excluding:** df[is.na(df),] <- NULL 
 
-**Imputing:** Look up guides on mice, missForest, impute, missRanger. This approach may not always be best, sometimes its best to leave values as Na's. Do a test of imputed data vs non-imputed to see what works for you. 
+**Imputing & Capping:** Aftering looking up guides on mice, missForest, impute, missRanger. I found this approach may not always be best, sometimes its best to leave values as Na's. Do a test of imputed data vs non-imputed to see what works for you.
 
-**Capping:** NA
-
-In this project because i assigned 1 and 0s to the Maha values therefore i had no need to remove any data. I did however, attempt to use missRanger and Mice to impute the values in a seperate trial where i combined the orginial train and test data and imputed the NA values in test but, the results were poor. 
+In this project because i assigned 1 and 0s to the Maha values based on if i believed they were an outlier. Therefore, i had no need to remove any data. I did however, attempt to use missRanger and Mice to impute the values in a seperate trial where i combined the orginial train and test data and imputed the NA values in test but, the results were poor. 
 
 ### Feature extraction:
 
@@ -79,6 +79,9 @@ I did attempt some PCA, however, this showed no improvement in results and hence
 
 
 # **NORMALISATION**
+
+Data normalisation is a crucial part of processing the data for ML. Picking the right method for the right variable requires, some
+research, trial and error. Here are the following methods i attempted. 
 
 ### Pick the right nromalisation method for your data. 
 
@@ -102,9 +105,7 @@ as it has functions to find the best lamba parameter.
 
 **Equal depth (frequency) binning:**  discretize() function with disc = "equalfreq"
 
-
 I used all the above methods when it came to normalising the data thorugh trial and error. I found that min-max, centering and scaling were the best options. 
-
 
 # **CLUSTERING**
 
@@ -125,7 +126,7 @@ Of all the clustering methods k-means and EM Clustering seem to do the best job.
 
 
 # **TUNING METHOD: BAYESIAN OPTIMIZATION**
-There are many tunning methods i've tried for this project.Bayesian Optimization with mlrMBO turned out to be the most efficient and accurate.   
+There are many tunning methods i've tried for this project. Bayesian Optimization with mlrMBO turned out to be the most efficient and accurate. All credits go to the below links for their work on this project and sample code.   
 
 ### mlrMBO
 
@@ -140,9 +141,12 @@ Using the best parameters from above.
 
 # **EVALUATION**
 
+# **SUBMISSION & RESULTS**
+* I ended up with an F1 score of 0.8703. For comparison students whom had submitted the x & y entry as the exit, and then determined the class scored 0.86002. 
+* This ranked me 106th globally and 24th in Australia. 
 
+# **AREA FOR FUTURE IMPROVEMENT**
 
-# **SUBMISSION**
 
 
 # **APPENDIX**
@@ -155,4 +159,4 @@ I used this method over night just to make sure that Bayesian didn't already giv
 
 ## **WIDE DATA TRAINING**
 
-This method of turning the dataset into a wide dataset by hash proved to show no signficant improvement. However, i believe the reason for this is due to the amount of NA values in the data set.
+This method of turning the dataset into a wide dataset by hash proved to show no signficant improvement. However, i believe the reason for this is due to the amount of NA values in the data set. There was a lot of potential in this method however, i never got enough time to investigate further. 
