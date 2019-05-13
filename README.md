@@ -121,7 +121,7 @@ Of all the clustering methods k-means and EM Clustering seem to do the best job.
 
 [theme_black() credit](https://jonlefcheck.net/2013/03/11/black-theme-for-ggplot2-2/)
 
-![kcluster5000black.jpg](./kcluster5000black.jpg)
+![kcluster20000black.jpg](./kcluster20000black.jpg)
 
 
 # **TUNING METHOD: BAYESIAN OPTIMIZATION**
