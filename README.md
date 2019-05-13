@@ -142,7 +142,7 @@ Using the best parameters from above.
 # **EVALUATION**
 
 # **SUBMISSION & RESULTS**
-* I ended up with an F1 score of 0.8703. For comparison students whom had submitted the x & y entry as the exit, and then determined the class scored 0.86002. 
+* I ended up with an F1 score of 0.8703. For comparison students whom had calculated the x & y entry as the exit, and then determined the class scored 0.86002. 
 * This ranked me 106th globally and 24th in Australia. 
 
 # **AREA FOR FUTURE IMPROVEMENT**
