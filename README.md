@@ -1,3 +1,7 @@
+GOTTA ADD IN AREAS OF IMPROVEMENT, 
+get rid of code and add pictures
+show screenshots of the data and etc
+
 ---
 title: "Optimizing Data for XGBOOST"
 Author: Harri Somakanthan
