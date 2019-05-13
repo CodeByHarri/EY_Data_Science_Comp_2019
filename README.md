@@ -56,7 +56,7 @@ Tukey’s rule says that the outliers are values more than 1.5 times the interqu
 
 * **The Mahalanobis distance:** Using the MVN package. 
 
-Using trail and error i applied all the above to various aspects of the data to determine outliers. I found Mahalanobis distance to give the best results. 
+Using trial and error i applied all the above to various aspects of the data to determine outliers. I found Mahalanobis distance to give the best results. 
 
 
 ### Handling Outliers:
