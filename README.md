@@ -110,19 +110,8 @@ I used all the above methods when it came to normalising the data thorugh trial 
 
 ## Pick the right clustering method for your data. 
 
-**K-means Clustering:** 
-
-**Hierarchical clustering:**
-
-**Expectation Maximization Clustering:**
-
-**Fuzzy clustering:** 
-
-**Density-based clustering:**
-
-**Model-based clustering:**
-
-**Partitioning methods:**
+**K-means Clustering, Hierarchical clustering, Expectation Maximization Clustering, Fuzzy clustering, Density-based clustering
+Model-based clustering or Partitioning methods**
 
 [Source & read more](https://www.datanovia.com/en/blog/types-of-clustering-methods-overview-and-quick-start-r-code/)
 
@@ -132,6 +121,7 @@ Of all the clustering methods k-means and EM Clustering seem to do the best job.
 
 [theme_black() credit](https://jonlefcheck.net/2013/03/11/black-theme-for-ggplot2-2/)
 
+![kcluster5000black.jpg](./kcluster5000black.jpg)
 
 
 # **TUNING METHOD: BAYESIAN OPTIMIZATION**
